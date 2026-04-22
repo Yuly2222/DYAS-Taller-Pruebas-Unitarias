@@ -15,14 +15,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.10.2</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <!-- Source: https://mvnrepository.com/artifact/junit/junit -->
+<dependencies>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.1</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
 
     <build>
         <plugins>
@@ -37,7 +38,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>edu.unisabana.tyvs.App</mainClass>
+                    <mainClass>edu.unisabana.tyvs.tdd</mainClass>
                 </configuration>
             </plugin>
         </plugins>
