@@ -29,4 +29,17 @@ public class RegistryTest {
         RegisterResult result = registry.registerVoter(person);
         Assert.assertEquals(RegisterResult.INVALID_AGE, result);
     }
+
+    @Test
+    public void shouldRejectDuplicatedId() {
+        Registry registry = new Registry();
+
+        Person p1 = new Person("Ana", 1, 25, Gender.FEMALE, true);
+        Person p2 = new Person("Ana", 1, 30, Gender.FEMALE, true); // mismo ID
+
+        registry.registerVoter(p1);
+        RegisterResult result = registry.registerVoter(p2);
+
+        Assert.assertEquals(RegisterResult.DUPLICATED, result);
+    }
 }
