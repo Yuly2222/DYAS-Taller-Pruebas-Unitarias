@@ -21,4 +21,12 @@ public class RegistryTest {
         RegisterResult result = registry.registerVoter(person);
         Assert.assertEquals(RegisterResult.UNDERAGE, result);
     }
+
+     @Test
+    public void shouldRejectNegativeAge() {
+        Registry registry = new Registry();
+        Person person = new Person("Ana", 1, -5, Gender.FEMALE, true);
+        RegisterResult result = registry.registerVoter(person);
+        Assert.assertEquals(RegisterResult.INVALID_AGE, result);
+    }
 }
