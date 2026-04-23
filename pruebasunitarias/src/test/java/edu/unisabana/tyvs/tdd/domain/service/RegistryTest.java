@@ -4,19 +4,19 @@ import edu.unisabana.tyvs.domain.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RegistryTest {
-
+public class RegistryTest { 
     @Test
-    public void shouldRegisterValidPerson() {
+    public void shouldRejectDeadPerson() {
         // Arrange: preparar los datos y el objeto a probar
         Registry registry = new Registry();
-        Person person = new Person("Ana", 1, 30, Gender.FEMALE, true);
+        Person dead = new Person("Carlos", 2, 40, Gender.MALE, false);
 
         // Act: ejecutar la acción que queremos probar
-        RegisterResult result = registry.registerVoter(person);
+        RegisterResult result = registry.registerVoter(dead);
 
         // Assert: verificar el resultado esperado
-        Assert.assertEquals(RegisterResult.VALID, result);
+        Assert.assertEquals(RegisterResult.DEAD, result);
     }
+
 }
 
