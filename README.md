@@ -2,6 +2,11 @@
 
 Este taller adapta el enfoque clásico de **TDD** (Red → Green → Refactor) a una **Arquitectura Limpia (Clean Architecture)**. El objetivo es que las **pruebas unitarias** garanticen la calidad del **dominio** sin acoplarse a frameworks o infraestructura.
 
+Equipo:
+* Brayan Presiga Sepulveda - 0000301424
+* Juan David Sanchez Roldan - 0000340321
+* Yuly Dayana Rodríguez Salcedo -0000305314
+
 ---
 
 ## 🎯 Objetivos del taller
