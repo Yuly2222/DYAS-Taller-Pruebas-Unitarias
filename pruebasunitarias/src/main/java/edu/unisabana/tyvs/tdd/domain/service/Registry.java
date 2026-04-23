@@ -5,14 +5,21 @@ import edu.unisabana.tyvs.domain.model.RegisterResult;
 
 public class Registry {
 
+    private static final int MIN_AGE = 18;
+
     public RegisterResult registerVoter(Person p) {
         if (p == null) {
-            return RegisterResult.INVALID; // regla defensiva
+            return RegisterResult.INVALID;
         }
+
         if (!p.isAlive()) {
             return RegisterResult.DEAD;
         }
-        // implementación mínima para pasar las pruebas actuales
+
+        if (p.getAge() < MIN_AGE) {
+            return RegisterResult.UNDERAGE;
+        }
+
         return RegisterResult.VALID;
     }
 }
